@@ -41,10 +41,13 @@ var maxTime = 11000;
 
 var isDragging = false;
 offset = {};
+
 function randomInteger(min, max) {
-    let rand = min + (1 - Math.random()) * (max - min);
+    let rand = Math.floor(Math.random()*(max-min+1))+min;
     return Math.floor(rand);
 };
+
+var rndRoute =  randomInteger(1,3);
 
 function formatTime(time) {
     let minutes = Math.floor(time / 1000 / 60);
@@ -164,7 +167,7 @@ function getRandomRoute(num) {
     ctx.shadowOffsetY = 1;
     ctx.lineWidth=5;
 
-    if (num == 1) {
+    if (num == 3) {
     ctx.lineTo(canvas.width/2.3, canvas.height/2.3);
     ctx.quadraticCurveTo(canvas.width/2, 2*canvas.height/2, canvas.width/4, 1.5*canvas.height/2.5);
     
@@ -177,11 +180,17 @@ function getRandomRoute(num) {
     ctx.moveTo(canvas.width/2.3, canvas.height/2.3-9);
     ctx.quadraticCurveTo(canvas.width/2.5, canvas.height/5, canvas.width/1.7, canvas.height/4);
     
-    ctx.moveTo(canvas.width/1.7+5, canvas.height/4+4);
-    ctx.quadraticCurveTo(canvas.width/1.64, canvas.height/4.1, canvas.width/1.2, canvas.height/1.5);
+    ctx.moveTo(canvas.width/1.35, canvas.height/5+4);
+    ctx.quadraticCurveTo(canvas.width/1, canvas.height/30, canvas.width/1.1, canvas.height/1.3);
+
+    ctx.moveTo(canvas.width/1.35, canvas.height/5+4);
+    ctx.quadraticCurveTo(canvas.width/1.5, canvas.height/0.6, canvas.width/1.7, canvas.height/4);
 
     ctx.moveTo(canvas.width/4+10, 1.5*canvas.height/2.5+20);
-    ctx.quadraticCurveTo(canvas.width/5, canvas.height/1.3, canvas.width/10, canvas.height/1.2);
+    ctx.quadraticCurveTo(canvas.width/4, canvas.height/1, canvas.width/10, canvas.height/1.2);
+
+  
+
     ctx.stroke();
     }
     else if (num == 2) {
@@ -212,6 +221,28 @@ function getRandomRoute(num) {
         
         ctx.stroke();
         }
+        else if (num == 1) {
+            
+            ctx.moveTo(canvas.width/4+10, 3*canvas.height/5+20);
+            ctx.quadraticCurveTo(canvas.width/3, canvas.height/1.3, canvas.width/10, canvas.height/1.2);
+
+            ctx.moveTo(5*canvas.width/6, canvas.height/2);
+            ctx.quadraticCurveTo(canvas.width/3, canvas.height/1, canvas.width/1.09, canvas.height/1.3);
+
+            ctx.moveTo(5*canvas.width/6 +10, canvas.height/2 -7);
+            ctx.quadraticCurveTo(canvas.width/0.9, canvas.height/100, canvas.width/1.5, canvas.height/4);
+            
+            ctx.moveTo(canvas.width/1.5, canvas.height/4);
+            ctx.quadraticCurveTo(canvas.width/5, canvas.height/2, canvas.width/1.8, canvas.height/1.3);
+
+            ctx.moveTo(canvas.width/1.8+10, canvas.height/1.3);
+            ctx.quadraticCurveTo(canvas.width/1.1, canvas.height/18, canvas.width/4, canvas.height/6);
+
+            ctx.moveTo(canvas.width/4+10, 3*canvas.height/5+20);
+            ctx.quadraticCurveTo(canvas.width/50, 2*canvas.height/10, canvas.width/4, canvas.height/6);
+
+            ctx.stroke();
+            }
 
 };
 
@@ -374,7 +405,7 @@ function getStarted (rndTime) {
 
     btn.addEventListener('click', () => {
         document.getElementById("start").remove();
-        getRandomRoute(2);
+        getRandomRoute(rndRoute);
         var startTime = null;
         var timerId = setInterval(function() {
             if (startTime === null) {
