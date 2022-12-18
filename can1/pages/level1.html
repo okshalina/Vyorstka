@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>game</title>
+    <link rel="stylesheet" href="../assets/css/level1.css"/>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { display: block; margin: 0 auto; }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+
+    <div class="level__rules">    
+      <h2>Досмотри действие до конца, посчитай время в секундах и введи правильный ответ</h2>
+    </div>
+
+    <div class="level__body">
+      <canvas id="can" class="canvs"></canvas>
+      <img src="../assets/imgages/1.png" id="1" width="100px" height="100px" class="image hidden"/>
+      <img src="../assets/imgages/2.png" id="2" width="100px" height="100px" class="image hidden"/>
+      <img src="../assets/imgages/3.png" id="3" width="200px" height="200px" class="image hidden"/>
+      <img src="../assets/imgages/4.png" id="4" width="100px" height="100px" class="image hidden"/>
+      <img src="../assets/imgages/5.png" id="5" width="100px" height="100px" class="image hidden"/>
+      <img src="../assets/imgages/6.png" id="6" width="200px" height="200px" class="image hidden"/>
+      
+      
+      <img src="../assets/imgages/8.png" id="8" width="80px" height="80px" style="display:none;z-index:100"/>
+      <img src="../assets/imgages/9.png" id="9" style="display:none;z-index:100"/>
+      <img src="../assets/imgages/10.png" id="10" style="display:none;z-index:100"/>
+      <img src="../assets/imgages/11.png" id="11" style="display:none;z-index:100"/>
+
+    </div>
+
+    <script src="../assets/js/canvas1.js"></script>
+    <script src="../assets/js/level1.js"></script>
+  </body>
+</html>
