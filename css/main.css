@@ -128,6 +128,7 @@ margin: 0px 35px 0px 0px;
 
 .menu__link:hover {
     color: var(--green);
+    animation: click 5s ease-in-out;
 }
 
 .header__burger {
@@ -489,7 +490,7 @@ margin: 0px 35px 0px 0px;
 
 .main-block__button:hover {
   box-shadow: 0 0 0 2px var(--white);
-  font-size: 105%;
+  animation: click 1s ease-in-out;
 }
 
 .main-block__background {
@@ -581,6 +582,7 @@ margin: 0px 0px 45px 0px;
 
 .project__item:hover {
   box-shadow: 0 0 0 3px  var(--green);
+  animation: click 1s ease-in-out;
 }
 .project__item__link {
   color: var(--white);
@@ -698,7 +700,7 @@ margin: 0px 0px 45px 0px;
 }
 .quotes__quote,
 .quotes__author {
-  color: var(--violet);
+  color: var(--white);
   background-color: var(--green);
   font-size: inherit;
   padding: 20px 20px;
@@ -714,23 +716,30 @@ margin: 0px 0px 45px 0px;
   background-color: var(--violet);
 }
 .quotes__button::selection {
-  background-color: var(--green);
-  color: var(--violet);
+  background-color: var(--violet);
+  color: var(--green);
+}
+.quotes__button:hover {
+  color: var(--green);
 }
 .quotes__button {
   color: var(--green);
-  background-color: var(--violet);
+  background-color: var(--white);
   font-size: inherit;
   padding: 20px 20px;
   text-align: center;
   margin: 30px auto;
   display: flex;
   justify-content: center;
+  box-shadow: 0 0 0 0.5px var(--green);
+  border: 2px solid var(--green);
 }
 .quotes__button:hover {
   box-shadow: 0 0 0 0.5px var(--green);
   border: 2px solid var(--green);
+  animation: click 1s ease-in-out;
 }
+
 
   /*-------------------------------
                 FOOTER
@@ -990,3 +999,14 @@ margin: 0px 0px 45px 0px;
             transform: scale(0.4);
           }
         }
+        @keyframes click {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(0.95);
+          }
+          100% {
+            transform: scale(1);
+          }
+          }
